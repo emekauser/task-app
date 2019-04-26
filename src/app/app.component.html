@@ -1,0 +1,22 @@
+<div class="container">
+ <form >
+  <div class="form-group">
+  <h1 class="text-center " style="color:white">My Task App</h1>
+   <div class="row input-group-prepend">
+      <div class="col-md-8">
+       <input type="text" #todo  style="width:100%;height:33px" placeholder="Add Task" name="todo" ngModel>
+       </div>
+       <div class="col-md-2" style="float:left">
+       <span class="btn btn-danger" (click)="addTodo(todo.value)">  Add Task</span>
+       </div>
+    
+   </div>
+  </div>
+   <div class="data">
+   <h4 class="text-center " style="color:white">My Tasks</h4>
+  <ul class="list-unstyled">
+   <li [@moveInLeft]  *ngFor="let todo of todoArray">{{todo}} <i (click)="deleteItem(todo)" class="material-icons">delete</i></li>
+  </ul>
+ </div>
+ </form>
+</div>
